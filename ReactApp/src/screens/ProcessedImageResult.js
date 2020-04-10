@@ -11,7 +11,7 @@ class ProcessedImageResult extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            processing: false        
+            processing: false
         }
     }
 
@@ -79,7 +79,7 @@ class ProcessedImageResult extends Component {
                 .catch(err => {
                     this.setProcessing(false);
                     this.props.history.push({pathname: '/error/default', state: {retryLastStep: true}});
-                    throw new Error(err);
+                    // throw new Error(err);
                 })
         } else {
             ApiService.postImage(this.props.instanceID, this.props.orientation, blobData)
@@ -93,7 +93,7 @@ class ProcessedImageResult extends Component {
                 .catch(err => {
                     this.setProcessing(false);
                     this.props.history.push({pathname: '/error/default', state: {retryLastStep: true}});
-                    throw new Error(err);
+                    // throw new Error(err);
                 })
         }
     }
@@ -117,7 +117,7 @@ class ProcessedImageResult extends Component {
             .catch(err => {
                 this.setProcessing(false);
                 this.props.history.push('/error/default');
-                throw new Error(err);
+                // throw new Error(err);
             });
     }
 

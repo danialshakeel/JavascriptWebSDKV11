@@ -40,7 +40,7 @@ class CaptureSelfie extends Component {
                         this.props.history.push('/results/default');
                     })
                         .catch(err => {
-                            throw new Error(err);
+                            // throw new Error(err);
                         });
                 }
             } else {
